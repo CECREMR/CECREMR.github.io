@@ -155,6 +155,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2019-10-01-idea-plugin-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/01/2019-10-01-idea-plugin-1/">IntelliJ Platform入门——尝试给IDEA开发一个自己用的插件①</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/01/2019-10-01-idea-plugin-1/" class="archive-article-date">
+  	<time datetime="2019-10-01T11:19:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="官方文档地址"><a href="#官方文档地址" class="headerlink" title="官方文档地址"></a><a href="http://www.jetbrains.org/intellij/sdk/docs/welcome.html" target="_blank" rel="noopener">官方文档地址</a></h1><p><a href="http://www.jetbrains.org/intellij/sdk/docs/welcome.html" target="_blank" rel="noopener">IntelliJ Platform SDK DevGuide</a><br>如果有时间的话看官网文档入门是个很好的选择，英语不好的同学可以选择谷歌机翻（现在机翻水平已经很高了），不建议看各个平台上的汉化版文档，比较过时。</p>
+<h1 id="Demo搭建"><a href="#Demo搭建" class="headerlink" title="Demo搭建"></a>Demo搭建</h1><p>本Demo主要是基于<a href="http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/using_dev_kit.html" target="_blank" rel="noopener">Using DevKit</a>文档进行搭建。</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a><a href="http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/setting_up_environment.html" target="_blank" rel="noopener">环境搭建</a></h2><p>主要是照着文档来，最好是下一个open source版的Idea来使用，最好按照官方推荐的版本安装依赖（推荐JDK8就装JDK8）<br><img src="https://i.loli.net/2019/10/08/wEQp2HZJB3zWAIM.png" alt="JDK"></p>
+<h2 id="项目Demo"><a href="#项目Demo" class="headerlink" title="项目Demo"></a>项目Demo</h2><p><a href="https://github.com/CECREMR/example/tree/master/idea-plugin/demo" target="_blank" rel="noopener">项目demo地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── demo.iml</span><br><span class="line">├── resources</span><br><span class="line">│   └── META-INF</span><br><span class="line">│       └── plugin.xml //插件配置文件</span><br><span class="line">└── src.com.galJs.plugin.demo</span><br><span class="line">    └── HelloWorld.java //action</span><br></pre></td></tr></table></figure></p>
+<h2 id="Demo效果"><a href="#Demo效果" class="headerlink" title="Demo效果"></a>Demo效果</h2><p>导航栏入口<br><img src="https://i.loli.net/2019/10/08/hCWXTHuQkOw7KGt.png" alt="入口"><br>点击效果<br><img src="https://i.loli.net/2019/10/08/GnvHdaBJAw1oWec.png" alt="点击效果"></p>
+<h1 id="打包插件"><a href="#打包插件" class="headerlink" title="打包插件"></a>打包插件</h1><p>Build<br><img src="https://i.loli.net/2019/10/08/nEcUF6eZWSTRGmO.png" alt="build"><br><img src="https://i.loli.net/2019/10/08/g1zuArvRQDGKjtE.png" alt="prepare"></p>
+<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><p>选择从磁盘中安装插件<br><img src="https://i.loli.net/2019/10/08/bV8AYjQU1JgNiEL.png" alt="从硬盘中安装"><br>选择刚刚prepare步骤中产生的jar包<br><img src="https://i.loli.net/2019/10/08/wiREMPvxdsfonI1.png" alt="选择刚刚prepare步骤中产生的jar包"><br>完美运行<br><img src="https://i.loli.net/2019/10/08/yIrgNfYpQ5slLAq.png" alt="完美运行"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">idea</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tool</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/01/2019-10-01-idea-plugin-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2019-09-01-taro-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -175,7 +259,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在<code>MFW</code>的时候我就尝试在一个服务端数据渲染的项目中推行<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>，结果项目还没怎么搞我先离开了<code>MFW</code>，后面给几个朋友做点前端咨询的时候就想起来<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>这个东西了，<code>React</code>风格，前端和各种小程序通吃，就花了点时间去看看，这些文章主要记录我在使用<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>的时候遇到的一些问题。</p>
+        <p>在<code>MFW</code>的时候我就尝试在一个服务端数据渲染的项目中推行<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>，结果项目还没怎么搞我先离开了<code>MFW</code>了，后面给几个朋友做点前端咨询（教小白写前端）的时候就想起来<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>这个东西了，<code>React</code>风格，前端和各种小程序通吃，就花了点时间去看看，这些文章主要记录我在使用<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>的时候遇到的一些问题。</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>照着<a href="https://taro-docs.jd.com/taro/docs/GETTING-STARTED.html" target="_blank" rel="noopener">官网</a>安装就行了，。我直接用<code>yarn</code>安装了最新版，没有遇到坑。</p>
 <h1 id="创建一个项目"><a href="#创建一个项目" class="headerlink" title="创建一个项目"></a>创建一个项目</h1><p>也是照着<a href="https://taro-docs.jd.com/taro/docs/GETTING-STARTED.html" target="_blank" rel="noopener">官网的安装指南</a>来，<code>taro init myApp</code>时候的交互式命令行还是很好用的，因为做的是一个微信云开发的项目，模板就选择了<code>wxcloud</code>，整体下来还是很简单的。<br><img src="https://i.loli.net/2019/09/01/dFivVx2XHl7NY4G.png" alt="就像这样"></p>
 <h1 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h1><p>相关<code>node_modules</code>依赖还是需要手动焊装的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd client &amp;&amp; yarn install &amp;&amp; cd ..</span><br></pre></td></tr></table></figure></p>
@@ -1157,86 +1241,6 @@
 
 
   
-    <article id="post-about-why" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/about-why/">初始化</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/19/about-why/" class="archive-article-date">
-  	<time datetime="2019-05-19T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="why"><a href="#why" class="headerlink" title="why"></a>why</h2><p>主要讲一下为什么要换一个<code>Github</code>账号，为什么要重新建一个博客：</p>
-<p>之前的<code>Github</code>账号和关联的各种账号太乱了，没有什么标识性和联系性便从头开始建立一个<code>Github</code>账号。</p>
-<p>至于为什么会叫<code>CECREMR</code>这个名字，是出自我的微信签名档<code>!CE CRE@m</code>演变过来的。至于微信签名档为什么叫<code>!CE CRE@m</code>就是另一个故事了（有兴趣的可以看一下<a href="https://www.bilibili.com/bangumi/media/md3398/" target="_blank" rel="noopener">《冰菓》</a>，强烈安利）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">about</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">other</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/19/about-why/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1326,14 +1330,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">about</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">other</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">rd</a>
               </li>
              
@@ -1343,6 +1339,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">log</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">about</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1359,6 +1363,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">perl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">idea</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tool</a>
               </li>
              
               <li class="article-tag-list-item">

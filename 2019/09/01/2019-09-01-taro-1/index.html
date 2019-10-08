@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="https://cecremr.github.io">
   <title>尝试使用Taro开发前端应用 | CECREMR的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在MFW的时候我就尝试在一个服务端数据渲染的项目中推行Taro，结果项目还没怎么搞我先离开了MFW，后面给几个朋友做点前端咨询的时候就想起来Taro这个东西了，React风格，前端和各种小程序通吃，就花了点时间去看看，这些文章主要记录我在使用Taro的时候遇到的一些问题。 安装照着官网安装就行了，。我直接用yarn安装了最新版，没有遇到坑。 创建一个项目也是照着官网的安装指南来，taro init">
+  <meta name="description" content="在MFW的时候我就尝试在一个服务端数据渲染的项目中推行Taro，结果项目还没怎么搞我先离开了MFW了，后面给几个朋友做点前端咨询（教小白写前端）的时候就想起来Taro这个东西了，React风格，前端和各种小程序通吃，就花了点时间去看看，这些文章主要记录我在使用Taro的时候遇到的一些问题。 安装照着官网安装就行了，。我直接用yarn安装了最新版，没有遇到坑。 创建一个项目也是照着官网的安装指南来，">
 <meta name="keywords" content="fe,小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="尝试使用Taro开发前端应用">
 <meta property="og:url" content="https://cecremr.github.io/2019/09/01/2019-09-01-taro-1/index.html">
 <meta property="og:site_name" content="CECREMR的博客">
-<meta property="og:description" content="在MFW的时候我就尝试在一个服务端数据渲染的项目中推行Taro，结果项目还没怎么搞我先离开了MFW，后面给几个朋友做点前端咨询的时候就想起来Taro这个东西了，React风格，前端和各种小程序通吃，就花了点时间去看看，这些文章主要记录我在使用Taro的时候遇到的一些问题。 安装照着官网安装就行了，。我直接用yarn安装了最新版，没有遇到坑。 创建一个项目也是照着官网的安装指南来，taro init">
+<meta property="og:description" content="在MFW的时候我就尝试在一个服务端数据渲染的项目中推行Taro，结果项目还没怎么搞我先离开了MFW了，后面给几个朋友做点前端咨询（教小白写前端）的时候就想起来Taro这个东西了，React风格，前端和各种小程序通吃，就花了点时间去看看，这些文章主要记录我在使用Taro的时候遇到的一些问题。 安装照着官网安装就行了，。我直接用yarn安装了最新版，没有遇到坑。 创建一个项目也是照着官网的安装指南来，">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/09/01/dFivVx2XHl7NY4G.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/01/i5Xu7OeVl8dzSgh.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/01/ATdWVMBiqNZE7Cz.png">
-<meta property="og:updated_time" content="2019-09-01T12:02:31.882Z">
+<meta property="og:updated_time" content="2019-09-01T12:08:54.341Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="尝试使用Taro开发前端应用">
-<meta name="twitter:description" content="在MFW的时候我就尝试在一个服务端数据渲染的项目中推行Taro，结果项目还没怎么搞我先离开了MFW，后面给几个朋友做点前端咨询的时候就想起来Taro这个东西了，React风格，前端和各种小程序通吃，就花了点时间去看看，这些文章主要记录我在使用Taro的时候遇到的一些问题。 安装照着官网安装就行了，。我直接用yarn安装了最新版，没有遇到坑。 创建一个项目也是照着官网的安装指南来，taro init">
+<meta name="twitter:description" content="在MFW的时候我就尝试在一个服务端数据渲染的项目中推行Taro，结果项目还没怎么搞我先离开了MFW了，后面给几个朋友做点前端咨询（教小白写前端）的时候就想起来Taro这个东西了，React风格，前端和各种小程序通吃，就花了点时间去看看，这些文章主要记录我在使用Taro的时候遇到的一些问题。 安装照着官网安装就行了，。我直接用yarn安装了最新版，没有遇到坑。 创建一个项目也是照着官网的安装指南来，">
 <meta name="twitter:image" content="https://i.loli.net/2019/09/01/dFivVx2XHl7NY4G.png">
   
     <link rel="alternative" href="/atom.xml" title="CECREMR的博客" type="application/atom+xml">
@@ -179,7 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在<code>MFW</code>的时候我就尝试在一个服务端数据渲染的项目中推行<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>，结果项目还没怎么搞我先离开了<code>MFW</code>，后面给几个朋友做点前端咨询的时候就想起来<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>这个东西了，<code>React</code>风格，前端和各种小程序通吃，就花了点时间去看看，这些文章主要记录我在使用<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>的时候遇到的一些问题。</p>
+        <p>在<code>MFW</code>的时候我就尝试在一个服务端数据渲染的项目中推行<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>，结果项目还没怎么搞我先离开了<code>MFW</code>了，后面给几个朋友做点前端咨询（教小白写前端）的时候就想起来<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>这个东西了，<code>React</code>风格，前端和各种小程序通吃，就花了点时间去看看，这些文章主要记录我在使用<a href="https://taro.aotu.io/" target="_blank" rel="noopener"><code>Taro</code></a>的时候遇到的一些问题。</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>照着<a href="https://taro-docs.jd.com/taro/docs/GETTING-STARTED.html" target="_blank" rel="noopener">官网</a>安装就行了，。我直接用<code>yarn</code>安装了最新版，没有遇到坑。</p>
 <h1 id="创建一个项目"><a href="#创建一个项目" class="headerlink" title="创建一个项目"></a>创建一个项目</h1><p>也是照着<a href="https://taro-docs.jd.com/taro/docs/GETTING-STARTED.html" target="_blank" rel="noopener">官网的安装指南</a>来，<code>taro init myApp</code>时候的交互式命令行还是很好用的，因为做的是一个微信云开发的项目，模板就选择了<code>wxcloud</code>，整体下来还是很简单的。<br><img src="https://i.loli.net/2019/09/01/dFivVx2XHl7NY4G.png" alt="就像这样"></p>
 <h1 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h1><p>相关<code>node_modules</code>依赖还是需要手动焊装的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd client &amp;&amp; yarn install &amp;&amp; cd ..</span><br></pre></td></tr></table></figure></p>
@@ -273,6 +273,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/10/01/2019-10-01-idea-plugin-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          IntelliJ Platform入门——尝试给IDEA开发一个自己用的插件①
+        
+      </div>
+    </a>
   
   
     <a href="/2019/06/06/2019-06-06-docker-1/" id="article-nav-older" class="article-nav-link-wrap">
@@ -394,14 +403,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">about</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">other</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">rd</a>
               </li>
              
@@ -411,6 +412,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">log</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">about</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">other</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -427,6 +436,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">perl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">idea</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tool</a>
               </li>
              
               <li class="article-tag-list-item">

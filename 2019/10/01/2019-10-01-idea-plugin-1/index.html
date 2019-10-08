@@ -6,18 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://cecremr.github.io">
-  <title>Tag: about | CECREMR的博客</title>
+  <title>IntelliJ Platform入门——尝试给IDEA开发一个自己用的插件① | CECREMR的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="16届HIT(WH)er，资深初级全栈工程师（在初级职位深耕多年，只会写初级代码），了解PHP、java、Golang、Dart、TypeScript多门语言的Hello World">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CECREMR的博客">
-<meta property="og:url" content="https://cecremr.github.io/tags/about/index.html">
+  <meta name="description" content="官方文档地址IntelliJ Platform SDK DevGuide如果有时间的话看官网文档入门是个很好的选择，英语不好的同学可以选择谷歌机翻（现在机翻水平已经很高了），不建议看各个平台上的汉化版文档，比较过时。 Demo搭建本Demo主要是基于Using DevKit文档进行搭建。 环境搭建主要是照着文档来，最好是下一个open source版的Idea来使用，最好按照官方推荐的版本安装依赖">
+<meta name="keywords" content="idea,tool">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IntelliJ Platform入门——尝试给IDEA开发一个自己用的插件①">
+<meta property="og:url" content="https://cecremr.github.io/2019/10/01/2019-10-01-idea-plugin-1/index.html">
 <meta property="og:site_name" content="CECREMR的博客">
-<meta property="og:description" content="16届HIT(WH)er，资深初级全栈工程师（在初级职位深耕多年，只会写初级代码），了解PHP、java、Golang、Dart、TypeScript多门语言的Hello World">
+<meta property="og:description" content="官方文档地址IntelliJ Platform SDK DevGuide如果有时间的话看官网文档入门是个很好的选择，英语不好的同学可以选择谷歌机翻（现在机翻水平已经很高了），不建议看各个平台上的汉化版文档，比较过时。 Demo搭建本Demo主要是基于Using DevKit文档进行搭建。 环境搭建主要是照着文档来，最好是下一个open source版的Idea来使用，最好按照官方推荐的版本安装依赖">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/10/08/wEQp2HZJB3zWAIM.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/08/hCWXTHuQkOw7KGt.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/08/GnvHdaBJAw1oWec.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/08/nEcUF6eZWSTRGmO.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/08/g1zuArvRQDGKjtE.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/08/bV8AYjQU1JgNiEL.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/08/wiREMPvxdsfonI1.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/08/yIrgNfYpQ5slLAq.png">
+<meta property="og:updated_time" content="2019-10-08T13:32:35.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CECREMR的博客">
-<meta name="twitter:description" content="16届HIT(WH)er，资深初级全栈工程师（在初级职位深耕多年，只会写初级代码），了解PHP、java、Golang、Dart、TypeScript多门语言的Hello World">
+<meta name="twitter:title" content="IntelliJ Platform入门——尝试给IDEA开发一个自己用的插件①">
+<meta name="twitter:description" content="官方文档地址IntelliJ Platform SDK DevGuide如果有时间的话看官网文档入门是个很好的选择，英语不好的同学可以选择谷歌机翻（现在机翻水平已经很高了），不建议看各个平台上的汉化版文档，比较过时。 Demo搭建本Demo主要是基于Using DevKit文档进行搭建。 环境搭建主要是照着文档来，最好是下一个open source版的Idea来使用，最好按照官方推荐的版本安装依赖">
+<meta name="twitter:image" content="https://i.loli.net/2019/10/08/wEQp2HZJB3zWAIM.png">
   
     <link rel="alternative" href="/atom.xml" title="CECREMR的博客" type="application/atom+xml">
   
@@ -153,116 +164,156 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2019-10-01-idea-plugin-1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/19/about-why/" class="archive-article-date">
-  	<time datetime="2019-05-19T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/19/about-why/">初始化</a>
+    <h1 class="article-title" itemprop="name">
+      IntelliJ Platform入门——尝试给IDEA开发一个自己用的插件①
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/10/01/2019-10-01-idea-plugin-1/" class="archive-article-date">
+  	<time datetime="2019-10-01T11:19:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="官方文档地址"><a href="#官方文档地址" class="headerlink" title="官方文档地址"></a><a href="http://www.jetbrains.org/intellij/sdk/docs/welcome.html" target="_blank" rel="noopener">官方文档地址</a></h1><p><a href="http://www.jetbrains.org/intellij/sdk/docs/welcome.html" target="_blank" rel="noopener">IntelliJ Platform SDK DevGuide</a><br>如果有时间的话看官网文档入门是个很好的选择，英语不好的同学可以选择谷歌机翻（现在机翻水平已经很高了），不建议看各个平台上的汉化版文档，比较过时。</p>
+<h1 id="Demo搭建"><a href="#Demo搭建" class="headerlink" title="Demo搭建"></a>Demo搭建</h1><p>本Demo主要是基于<a href="http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/using_dev_kit.html" target="_blank" rel="noopener">Using DevKit</a>文档进行搭建。</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a><a href="http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/setting_up_environment.html" target="_blank" rel="noopener">环境搭建</a></h2><p>主要是照着文档来，最好是下一个open source版的Idea来使用，最好按照官方推荐的版本安装依赖（推荐JDK8就装JDK8）<br><img src="https://i.loli.net/2019/10/08/wEQp2HZJB3zWAIM.png" alt="JDK"></p>
+<h2 id="项目Demo"><a href="#项目Demo" class="headerlink" title="项目Demo"></a>项目Demo</h2><p><a href="https://github.com/CECREMR/example/tree/master/idea-plugin/demo" target="_blank" rel="noopener">项目demo地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── demo.iml</span><br><span class="line">├── resources</span><br><span class="line">│   └── META-INF</span><br><span class="line">│       └── plugin.xml //插件配置文件</span><br><span class="line">└── src.com.galJs.plugin.demo</span><br><span class="line">    └── HelloWorld.java //action</span><br></pre></td></tr></table></figure></p>
+<h2 id="Demo效果"><a href="#Demo效果" class="headerlink" title="Demo效果"></a>Demo效果</h2><p>导航栏入口<br><img src="https://i.loli.net/2019/10/08/hCWXTHuQkOw7KGt.png" alt="入口"><br>点击效果<br><img src="https://i.loli.net/2019/10/08/GnvHdaBJAw1oWec.png" alt="点击效果"></p>
+<h1 id="打包插件"><a href="#打包插件" class="headerlink" title="打包插件"></a>打包插件</h1><p>Build<br><img src="https://i.loli.net/2019/10/08/nEcUF6eZWSTRGmO.png" alt="build"><br><img src="https://i.loli.net/2019/10/08/g1zuArvRQDGKjtE.png" alt="prepare"></p>
+<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><p>选择从磁盘中安装插件<br><img src="https://i.loli.net/2019/10/08/bV8AYjQU1JgNiEL.png" alt="从硬盘中安装"><br>选择刚刚prepare步骤中产生的jar包<br><img src="https://i.loli.net/2019/10/08/wiREMPvxdsfonI1.png" alt="选择刚刚prepare步骤中产生的jar包"><br>完美运行<br><img src="https://i.loli.net/2019/10/08/yIrgNfYpQ5slLAq.png" alt="完美运行"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">about</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">idea</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">other</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tool</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://cecremr.github.io/2019/10/01/2019-10-01-idea-plugin-1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/1995" class="archive-year">1995</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/01/2019-09-01-taro-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">尝试使用Taro开发前端应用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/1995/10/13/about-me/" class="archive-article-date">
-  	<time datetime="1995-10-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>1995-10-13</time>
-</a>
-        </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/1995/10/13/about-me/">README.md</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">about</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">other</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -285,9 +336,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
