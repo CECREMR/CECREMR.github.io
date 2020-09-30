@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://cecremr.github.io">
-  <title>一些常用的和docker相关的Shell | CECREMR的博客</title>
+  <title>MySQL ERROR 1292 (22007) Incorrect datetime value | CECREMR的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="有的时候我们使用docker命令或者Kitematic，做一些批处理操作的时候总有些麻烦。比如一直在build就会有很多的中间镜像和早期版本的镜像，如果Dockerfile的层没做好的话这些镜像又会浪费很大的存储空间，为了给自己方便就写了几个命令，好方便的清理这些镜像和容器。 删除镜像1docker images | grep none | awk &apos;&amp;#123;print  $3 &amp;#125;&apos;">
-<meta name="keywords" content="rd">
+  <meta name="description" content="在mysql中使用timestamp和datetime字段的时候我们经常会遇到这个问题ERROR 1292 (22007) at line 1: Incorrect datetime value: ‘0000-00-00 00:00:00’ for column ‘create_time’ at row 1在我所在的公司，由于基建使用的MySQL发行版和配置不同出现了在某个MySQL实例上可以插入">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一些常用的和docker相关的Shell">
-<meta property="og:url" content="https://cecremr.github.io/2019/06/06/2019-06-06-docker-1/index.html">
+<meta property="og:title" content="MySQL ERROR 1292 (22007) Incorrect datetime value">
+<meta property="og:url" content="https://cecremr.github.io/2020/09/30/2020-09-30-mysql-error-1292/index.html">
 <meta property="og:site_name" content="CECREMR的博客">
-<meta property="og:description" content="有的时候我们使用docker命令或者Kitematic，做一些批处理操作的时候总有些麻烦。比如一直在build就会有很多的中间镜像和早期版本的镜像，如果Dockerfile的层没做好的话这些镜像又会浪费很大的存储空间，为了给自己方便就写了几个命令，好方便的清理这些镜像和容器。 删除镜像1docker images | grep none | awk &apos;&amp;#123;print  $3 &amp;#125;&apos;">
+<meta property="og:description" content="在mysql中使用timestamp和datetime字段的时候我们经常会遇到这个问题ERROR 1292 (22007) at line 1: Incorrect datetime value: ‘0000-00-00 00:00:00’ for column ‘create_time’ at row 1在我所在的公司，由于基建使用的MySQL发行版和配置不同出现了在某个MySQL实例上可以插入">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-01T11:06:34.882Z">
+<meta property="og:updated_time" content="2020-09-30T10:50:58.795Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一些常用的和docker相关的Shell">
-<meta name="twitter:description" content="有的时候我们使用docker命令或者Kitematic，做一些批处理操作的时候总有些麻烦。比如一直在build就会有很多的中间镜像和早期版本的镜像，如果Dockerfile的层没做好的话这些镜像又会浪费很大的存储空间，为了给自己方便就写了几个命令，好方便的清理这些镜像和容器。 删除镜像1docker images | grep none | awk &apos;&amp;#123;print  $3 &amp;#125;&apos;">
+<meta name="twitter:title" content="MySQL ERROR 1292 (22007) Incorrect datetime value">
+<meta name="twitter:description" content="在mysql中使用timestamp和datetime字段的时候我们经常会遇到这个问题ERROR 1292 (22007) at line 1: Incorrect datetime value: ‘0000-00-00 00:00:00’ for column ‘create_time’ at row 1在我所在的公司，由于基建使用的MySQL发行版和配置不同出现了在某个MySQL实例上可以插入">
   
     <link rel="alternative" href="/atom.xml" title="CECREMR的博客" type="application/atom+xml">
   
@@ -155,30 +155,269 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2019-06-06-docker-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2020-09-30-mysql-error-1292" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      一些常用的和docker相关的Shell
+      MySQL ERROR 1292 (22007) Incorrect datetime value
     </h1>
   
 
         
-        <a href="/2019/06/06/2019-06-06-docker-1/" class="archive-article-date">
-  	<time datetime="2019-06-06T02:24:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-06</time>
+        <a href="/2020/09/30/2020-09-30-mysql-error-1292/" class="archive-article-date">
+  	<time datetime="2020-09-30T10:27:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>有的时候我们使用<code>docker</code>命令或者<a href="https://kitematic.com/" target="_blank" rel="noopener"><code>Kitematic</code></a>，做一些批处理操作的时候总有些麻烦。比如一直在build就会有很多的中间镜像和早期版本的镜像，如果<code>Dockerfile</code>的层没做好的话这些镜像又会浪费很大的存储空间，为了给自己方便就写了几个命令，好方便的清理这些镜像和容器。</p>
-<h2 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images | grep none | awk '&#123;print  $3 &#125;' | xargs docker rmi</span><br></pre></td></tr></table></figure>
-<h2 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a | grep ago | awk '&#123;print $1&#125;' | xargs docker rm</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>只要你也用<a href="https://kitematic.com/" target="_blank" rel="noopener"><code>Kitematic</code></a>我们就是好朋友！！！</p>
+        <h1 id="在mysql中使用timestamp和datetime字段的时候我们经常会遇到这个问题"><a href="#在mysql中使用timestamp和datetime字段的时候我们经常会遇到这个问题" class="headerlink" title="在mysql中使用timestamp和datetime字段的时候我们经常会遇到这个问题"></a>在mysql中使用timestamp和datetime字段的时候我们经常会遇到这个问题</h1><p>ERROR 1292 (22007) at line 1: Incorrect datetime value: ‘0000-00-00 00:00:00’ for column ‘create_time’ at row 1<br>在我所在的公司，由于基建使用的MySQL发行版和配置不同出现了在某个MySQL实例上可以插入某个MySQL实例上无法插入数据的问题，经排查和测试在MySQL中这个词错误的出现是和SQL_MODE的设置有关</p>
+<blockquote>
+<p>NO_ZERO_IN_DATE：<br>在严格模式，不接受月或日部分为0的日期。如果使用IGNORE选项，我们为类似的日期插入’0000-00-00’。在非严格模式，可以接受该日期，但会生成警告。<br>NO_ZERO_DATE：<br>在严格模式，不要将 ‘0000-00-00’做为合法日期。你仍然可以用IGNORE选项插入零日期。在非严格模式，可以接受该日期，但会生成警告</p>
+</blockquote>
+<h1 id="对照表"><a href="#对照表" class="headerlink" title="对照表"></a>对照表</h1><h2 id="字段类型timestamp"><a href="#字段类型timestamp" class="headerlink" title="字段类型timestamp"></a>字段类型timestamp</h2><p>插入 0000-00-00 00:00:00数据结果</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">发行版\配置</th>
+<th style="text-align:left">default</th>
+<th style="text-align:left">allconf</th>
+<th style="text-align:left">without_nozerodate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">5.6</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">5.7</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">8.0</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">MariaDB:10.5</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+</tbody>
+</table>
+<p>插入 1970-01-01 00:00:00数据结果</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">发行版\配置</th>
+<th style="text-align:left">default</th>
+<th style="text-align:left">allconf</th>
+<th style="text-align:left">without_nozerodate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">5.6</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+</tr>
+<tr>
+<td style="text-align:left">5.7</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+</tr>
+<tr>
+<td style="text-align:left">8.0</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+</tr>
+<tr>
+<td style="text-align:left">MariaDB:10.5</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+</tr>
+</tbody>
+</table>
+<p>插入 1970-01-01 00:00:01数据结果</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">发行版\配置</th>
+<th style="text-align:left">default</th>
+<th style="text-align:left">allconf</th>
+<th style="text-align:left">without_nozerodate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">5.6</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">5.7</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">8.0</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">MariaDB:10.5</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="字段类型datetime"><a href="#字段类型datetime" class="headerlink" title="字段类型datetime"></a>字段类型datetime</h2><p>插入 0000-00-00 00:00:00数据结果</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">发行版\配置</th>
+<th style="text-align:left">default</th>
+<th style="text-align:left">allconf</th>
+<th style="text-align:left">without_nozerodate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">5.6</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">5.7</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">8.0</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">❎</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">MariaDB:10.5</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+</tbody>
+</table>
+<p>插入 1970-01-01 00:00:00数据结果</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">发行版\配置</th>
+<th style="text-align:left">default</th>
+<th style="text-align:left">allconf</th>
+<th style="text-align:left">without_nozerodate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">5.6</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">5.7</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">8.0</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">MariaDB:10.5</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+</tbody>
+</table>
+<p>插入 1970-01-01 00:00:01数据结果</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">发行版\配置</th>
+<th style="text-align:left">default</th>
+<th style="text-align:left">allconf</th>
+<th style="text-align:left">without_nozerodate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">5.6</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">5.7</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">8.0</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+<tr>
+<td style="text-align:left">MariaDB:10.5</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+<td style="text-align:left">✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sql-mod"><a href="#sql-mod" class="headerlink" title="sql_mod"></a>sql_mod</h2><p>Copy from web<br>STRICT_TRANS_TABLES：<br> 在该模式下，如果一个值不能插入到一个事务表中，则中断当前的操作，对非事务表不做任何限制</p>
+<p>NO_ZERO_IN_DATE：<br> 在严格模式，不接受月或日部分为0的日期。如果使用IGNORE选项，我们为类似的日期插入’0000-00-00’。在非严格模式，可以接受该日期，但会生成警告。</p>
+<p>NO_ZERO_DATE：<br>在严格模式，不要将 ‘0000-00-00’做为合法日期。你仍然可以用IGNORE选项插入零日期。在非严格模式，可以接受该日期，但会生成警告</p>
+<p>PS: MariaDB 没有NO_ZERO_DATE和NO_ZERO_IN_DATE 所有都成功了，不知道是否和MariaDB使用的percona的XtraDB engine有关，我之前使用的都是percona或者MariaDB就从来没遇到过这个问题</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li>NO_ZERO_DATE和NO_ZERO_IN_DATE字段合法值范围和字段类型有关，timestamp和datetime是不同的</li>
+<li>推荐使用int而不是datetime和timestamp来存储时间（时区问题和parse问题，部分语言的标注库是用c写的，c的tm结构有个坑，关于00月00日会被转换为上一年的11月30日，详见<a href="https://github.com/CECREMR/example/blob/master/c/c_timestruct/test.c）" target="_blank" rel="noopener">https://github.com/CECREMR/example/blob/master/c/c_timestruct/test.c）</a></li>
+</ol>
+<p>另外 1970-01-01 00:00:00是一个timestamp的非法值不要插入这个 </p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><h2 id="使用更科学的字段来存储时间"><a href="#使用更科学的字段来存储时间" class="headerlink" title="使用更科学的字段来存储时间"></a>使用更科学的字段来存储时间</h2><p>timestamp和datetime都有一些和时区相关的问题，如果不想找麻烦的话：<br>请用 bigint/int存时间<br>请用 bigint/int存时间<br>请用 bigint/int存时间</p>
+<h2 id="修改sql-mode"><a href="#修改sql-mode" class="headerlink" title="修改sql_mode"></a>修改sql_mode</h2><p>修改sql_mode，去掉其中的NO_ZERO_DATE</p>
+<h3 id="1-session"><a href="#1-session" class="headerlink" title="1. session"></a>1. session</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set @@sql_mode=&quot;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="2-conf"><a href="#2-conf" class="headerlink" title="2. conf"></a>2. conf</h3><p>修改conf中mysqld部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">pid-file        = /var/run/mysqld/mysqld.pid</span><br><span class="line">socket          = /var/run/mysqld/mysqld.sock</span><br><span class="line">datadir         = /var/lib/mysql</span><br><span class="line">symbolic-links  = 0</span><br><span class="line">sql_mode        = ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-使用MariaDB（逃"><a href="#3-使用MariaDB（逃" class="headerlink" title="3. 使用MariaDB（逃"></a><del>3. 使用MariaDB（逃</del></h3><h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><p>包含基于官方5.6 5.7 8和MariaDB:10.5 docker镜像的测试<br><a href="https://github.com/CECREMR/example/tree/master/mysql/error1292" target="_blank" rel="noopener">https://github.com/CECREMR/example/tree/master/mysql/error1292</a></p>
+<h1 id="拓展其他bug"><a href="#拓展其他bug" class="headerlink" title="拓展其他bug"></a>拓展其他bug</h1><p><a href="https://github.com/CECREMR/example/blob/master/c/c_timestruct/test.c" target="_blank" rel="noopener">https://github.com/CECREMR/example/blob/master/c/c_timestruct/test.c</a></p>
+<h1 id="SQL-Mode"><a href="#SQL-Mode" class="headerlink" title="SQL Mode"></a>SQL Mode</h1><p>Copy from web<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ONLY_FULL_GROUP_BY：对于GROUP BY聚合操作，如果在SELECT中的列，没有在GROUP BY中出现，那么这个SQL是不合法的，因为列不在GROUP BY从句中</span><br><span class="line">NO_AUTO_VALUE_ON_ZERO：该值影响自增长列的插入。默认设置下，插入0或NULL代表生成下一个自增长值。如果用户 希望插入的值为0，而该列又是自增长的，那么这个选项就有用了。</span><br><span class="line">STRICT_TRANS_TABLES：在该模式下，如果一个值不能插入到一个事务表中，则中断当前的操作，对非事务表不做限制</span><br><span class="line">NO_ZERO_IN_DATE：在严格模式下，不允许日期和月份为零</span><br><span class="line">NO_ZERO_DATE：设置该值，mysql数据库不允许插入零日期，插入零日期会抛出错误而不是警告。</span><br><span class="line">ERROR_FOR_DIVISION_BY_ZERO：在INSERT或UPDATE过程中，如果数据被零除，则产生错误而非警告。如 果未给出该模式，那么数据被零除时MySQL返回NULL</span><br><span class="line">NO_ENGINE_SUBSTITUTION：如果需要的存储引擎被禁用或未编译，那么抛出错误。不设置此值时，用默认的存储引擎替代，并抛出一个异常</span><br><span class="line">PIPES_AS_CONCAT：将&quot;||&quot;视为字符串的连接操作符而非或运算符，这和Oracle数据库是一样的，也和字符串的拼接函数Concat相类似</span><br><span class="line">ANSI_QUOTES：启用ANSI_QUOTES后，不能用双引号来引用字符串，因为它被解释为识别符</span><br></pre></td></tr></table></figure></p>
+<p>Ps<br>我之前一直用的是percona从未遇到这个坑，如有错误请协助修正</p>
 
       
 
@@ -192,7 +431,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">rd</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
@@ -248,7 +487,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://cecremr.github.io/2019/06/06/2019-06-06-docker-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://cecremr.github.io/2020/09/30/2020-09-30-mysql-error-1292/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -262,18 +501,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/01/2019-09-01-taro-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          尝试使用Taro开发前端应用
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/05/22/2019-05-22-graph-easy/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ASCII字符画工具——Graph::Easy</div>
+    <a href="/2019/10/01/2019-10-01-idea-plugin-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IntelliJ Platform入门——尝试给IDEA开发一个自己用的插件①</div>
       <i class="icon-circle-right"></i>
     </a>
   

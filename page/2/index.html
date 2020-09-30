@@ -155,6 +155,130 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2019-05-20-content-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/20/2019-05-20-content-1/">结构化内容存储的一些见解——①简述</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/20/2019-05-20-content-1/" class="archive-article-date">
+  	<time datetime="2019-05-20T06:51:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a href="https://cecremr.github.io/tags/content/">目录</a></h3><h2 id="为什么要写这篇文章？"><a href="#为什么要写这篇文章？" class="headerlink" title="为什么要写这篇文章？"></a>为什么要写这篇文章？</h2><p>说实话做内容相关的业务已经做了三年左右了，再加上在读大学的时候做过一段时间<a href="http://bbs.ghtt.net/forum.php" target="_blank" rel="noopener">观海听涛</a>论坛的管理员，对于内容业务内容部分也算有一些见解，也一直在做内容结构化存储，就把这些对于内容存储的一些经验拿出来分享一下。<br>对于文章的内容，很多都是出自我个人对业务的理解，对于不同的声音欢迎来交流。</p>
+<h2 id="什么是内容？"><a href="#什么是内容？" class="headerlink" title="什么是内容？"></a>什么是内容？</h2><p>首先先解释一个概念内容到底是什么，宽泛的讲内容指事物内在因素的总和。对互联网产业来说，所有的实体都是内容。但这个概念太宽泛了，不利于我们对内容做一些具体的事情。所以我们需要从更专注的角度看内容，抛开一个个实体标准化的部分，剩下一些非标准化的元素我们可以都看做内容。<br>举个🌰 ：<br>我们看一个商品有分类、售价、标签、配送信息、商品介绍等属性，对于这些属性来说分类、售价、标签、配送信息这些都属于易于标准化的，而对于商品介绍这些来说标准化可能就是个艰难的过程了，不同商家对于商品介绍的理解都是不同的，各个电商平台需要提供一个强大的商品介绍编辑器来满足商家的需求。在这里我们的内容就是商品介绍。<br>本系列文章中我们主要针对以下几种场景来讲内容：</p>
+<ul>
+<li>帖子内容</li>
+<li>回复内容</li>
+<li>商品内容</li>
+<li>短内容</li>
+</ul>
+<h2 id="什么是结构化，以及我们为什么使用结构化存储方案？"><a href="#什么是结构化，以及我们为什么使用结构化存储方案？" class="headerlink" title="什么是结构化，以及我们为什么使用结构化存储方案？"></a>什么是结构化，以及我们为什么使用结构化存储方案？</h2><h3 id="先讲一下什么是结构化？"><a href="#先讲一下什么是结构化？" class="headerlink" title="先讲一下什么是结构化？"></a>先讲一下什么是结构化？</h3><p>在我们的理解中我们总是喜欢讲结构化存储和非结构话存储作为一个对立的概念，其实结构化和非结构化都是相对的。<br>有的人说以<a href="https://baike.baidu.com/item/JSON/2462549?fr=aladdin" target="_blank" rel="noopener">JSON</a>格式存储的就是结构化，<a href="https://baike.baidu.com/item/HTML" target="_blank" rel="noopener">HTML</a>这种富文本格式存储的就是非结构化。<br>实际上HTML也应该归属于结构化的数据，只是结构化的粒度细太细了，解析和编辑速度和JSON这种结构比起来差距较大，而且过于松散的语法（不必要的标签和属性）和过细的粒度（div&gt;div&gt;p&gt;b此类结构）不适用与我们的的一些结构化存储场景。<br>上面这些话的目的就是引出一个概念，结构化的概念是相对的，没有最优的解决方案只有最适合的解决方案。</p>
+<h3 id="为什么使用结构化存储数据？"><a href="#为什么使用结构化存储数据？" class="headerlink" title="为什么使用结构化存储数据？"></a>为什么使用结构化存储数据？</h3><p>主要是三个原因：</p>
+<h4 id="1-用户体验角度"><a href="#1-用户体验角度" class="headerlink" title="1.用户体验角度"></a>1.用户体验角度</h4><p>用过<a href="http://www.discuz.net/forum.php" target="_blank" rel="noopener">discuz</a>的同学或许会对discuz的富文本编辑器有一些印象，在网页上编写富文本内容存储也是通过富文本存储，对于一些pc互联网时代的内容公司在成立之初也是通过这种方式设计的内容存储方案。<br>一段时间内富文本编辑器的开源项目也是🔥的不行，但到了移动互联网时代，整个格局都改变了，富文本格式在手机上的展示和pc完全不同，有些精心排版的帖子在移动端上打开后变得非常混乱。当我们需要解决跨平台问题时富文本存储和编辑方案就无法解决我们的展示和编辑需求了。</p>
+<h4 id="2-平台数据的需求"><a href="#2-平台数据的需求" class="headerlink" title="2.平台数据的需求"></a>2.平台数据的需求</h4><p>尽管现在数据挖掘、机器学习等技术已经足够成熟，对于长文本内容也可以从中提取出对应的关键信息，可以依据技术手段来对长文本进行分发。<br>但对于有些长内容来说，这种分发效率还是低下的。在移动互联网时代，大家对动辄阅读10分钟以上的帖子、攻略已经不感冒了，大多数人都会把时间放在更碎片化的信息获取上，就像小红书、抖音这种短内容平台。但PGC\UGC产生的长内容也是一块不可舍弃的宝贵资产，还是很多用户乐于将自己长时间精力总结到一篇长内容中。<br>虽然我们可以通过技术\人工的手段对内容进行打捞，对单独的段落进行分发，建设这一套系统的成本投入的人力物力并不是每个公司都可以负担的起的，特别是一些工具类的App。<br>那我们为什么不从生产端的角度来做这件事件呢？通过文章本身就有的段落属性，结合生产端对结构化内容关联信息的能力，让分发在不依赖算法\人工的前提下就有一定的能力，同时结构化数据也会提高算法\人工效率，何乐而不为呢？</p>
+<h4 id="3-扩展性"><a href="#3-扩展性" class="headerlink" title="3.扩展性"></a>3.扩展性</h4><p>这个原因应该是技术人最关心的原因了吧？我们再用评论模块来举个🌰：</p>
+<ol>
+<li>支持文字回复</li>
+<li>支持小表情回复</li>
+<li>支持图片回复</li>
+<li>支持视频回复</li>
+<li>支持混排回复</li>
+</ol>
+<p>如果一开始你的数据表设计成这个样子的话，可能现在就有点难受了</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">column</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+</tr>
+<tr>
+<td style="text-align:left">to_reply_id</td>
+</tr>
+<tr>
+<td style="text-align:left">text</td>
+</tr>
+<tr>
+<td style="text-align:left">ctime</td>
+</tr>
+<tr>
+<td style="text-align:left">mtime</td>
+</tr>
+</tbody>
+</table>
+<p>对于前几个需求可以通过添加字段的方式进行解决，当遇到了混排需求后就不得不从头重新设计一下结构了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从总体产品的角度上来说结构化或许会减少内容样式上的多样性（通过结构化仍可以做到居中，变换字体颜色和图片尺寸等功能），但从总体内容生产、组织、分发上来说应该是一个好事，至于具体结构化到什么程度，对内容样式的支持到多细的粒度就和具体的产品形态有关了。<br>对于一些重内容的公司，内部有多个内容产品形态的公司，成立一个内容存储中台，将结构化存储和扩展的能力和业务解耦，让多个业务能更专注于生产端或者流量端的事情，也许是一个不错的选择。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">rd</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">content</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/20/2019-05-20-content-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-about-why" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -425,7 +549,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 CECREMR
+    		&copy; 2020 CECREMR
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -532,14 +656,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">idea</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">tool</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">perl</a>
               </li>
              
@@ -549,6 +665,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">idea</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tool</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
             
             <div class="clearfix"></div>
